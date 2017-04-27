@@ -91,6 +91,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "release": "prebuild -t 1.6.6 -r electron -u $TOKEN",
     "electron:build": "node-gyp rebuild --target=1.6.6 --arch=x64 --dist-url=https://atom.io/download/electron",
     "electron:build:64": "node-gyp rebuild --target=1.6.6 --arch=x64 --dist-url=https://atom.io/download/electron",
     "electron:build:32": "node-gyp rebuild --target=1.6.6 --arch=ia32 --dist-url=https://atom.io/download/electron",
