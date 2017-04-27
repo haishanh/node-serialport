@@ -1,6 +1,6 @@
 {
-  "name": "serialport",
-  "version": "4.0.7",
+  "name": "hs-serialport",
+  "version": "4.0.8",
   "description": "Node.js package to access serial ports. Welcome your robotic javascript overlords. Better yet, program them!",
   "author": {
     "name": "Chris Williams",
@@ -9,13 +9,13 @@
   },
   "binary": {
     "module_name": "serialport",
-    "module_path": "build/{configuration}/",
-    "host": "https://github.com/EmergingTechnologyAdvisors/node-serialport/releases/download/4.0.7"
+    "module_path": "build/Release/",
+    "host": "https://github.com/haishanh/node-serialport/releases/download/4.0.8"
   },
   "main": "./lib/serialport",
   "repository": {
     "type": "git",
-    "url": "git://github.com/EmergingTechnologyAdvisors/node-serialport.git"
+    "url": "git://github.com/haishanh/node-serialport.git"
   },
   "keywords": [
     "serialport",
@@ -71,8 +71,10 @@
     "grunt-mocha-test": "^0.12.7",
     "gruntify-eslint": "^2.0.0",
     "mocha": "^2.4.5",
+    "node-gyp": "^3.6.0",
     "node-pre-gyp-github": "^1.1.2",
     "nyc": "^6.4.4",
+    "prebuild": "^6.1.0",
     "sandboxed-module": "^2.0.3",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
@@ -89,6 +91,10 @@
   },
   "license": "MIT",
   "scripts": {
+    "electron:build": "node-gyp rebuild --target=1.6.6 --arch=x64 --dist-url=https://atom.io/download/electron",
+    "electron:build:64": "node-gyp rebuild --target=1.6.6 --arch=x64 --dist-url=https://atom.io/download/electron",
+    "electron:build:32": "node-gyp rebuild --target=1.6.6 --arch=ia32 --dist-url=https://atom.io/download/electron",
+    "package": "node-pre-gyp package",
     "install": "node-pre-gyp install --fallback-to-build",
     "rebuild-all": "npm rebuild && node-gyp rebuild",
     "gyp-rebuild": "node-gyp rebuild",
