@@ -1,6 +1,6 @@
 {
   "name": "hs-serialport",
-  "version": "4.0.8",
+  "version": "4.0.9",
   "description": "Node.js package to access serial ports. Welcome your robotic javascript overlords. Better yet, program them!",
   "author": {
     "name": "Chris Williams",
