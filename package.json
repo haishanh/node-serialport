@@ -1,6 +1,6 @@
 {
   "name": "hs-serialport",
-  "version": "4.0.9",
+  "version": "4.0.10",
   "description": "Node.js package to access serial ports. Welcome your robotic javascript overlords. Better yet, program them!",
   "author": {
     "name": "Chris Williams",
@@ -10,7 +10,7 @@
   "binary": {
     "module_name": "serialport",
     "module_path": "build/Release/",
-    "host": "https://github.com/haishanh/node-serialport/releases/download/4.0.8"
+    "host": "https://github.com/haishanh/node-serialport/releases/download/4.0.10"
   },
   "main": "./lib/serialport",
   "repository": {
@@ -95,7 +95,9 @@
     "electron:build": "node-gyp rebuild --target=1.6.6 --arch=x64 --dist-url=https://atom.io/download/electron",
     "electron:build:64": "node-gyp rebuild --target=1.6.6 --arch=x64 --dist-url=https://atom.io/download/electron",
     "electron:build:32": "node-gyp rebuild --target=1.6.6 --arch=ia32 --dist-url=https://atom.io/download/electron",
-    "package": "node-pre-gyp package",
+    "package:mac": "node-pre-gyp package --runtime=electron --target=1.6.6 --target_platform=darwin",
+    "package:win32": "node-pre-gyp package --runtime=electron --target=1.6.6 --target_arch=ia32 --target_platform=win32 ",
+    "package:win64": "node-pre-gyp package --runtime=electron --target=1.6.6 --target_arch=x64 --target_platform=win32",
     "install": "node-pre-gyp install --fallback-to-build",
     "rebuild-all": "npm rebuild && node-gyp rebuild",
     "gyp-rebuild": "node-gyp rebuild",
